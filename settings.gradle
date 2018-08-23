@@ -2,3 +2,4 @@ rootProject.name = 'mybatis-assciation'
 
 include ':shared'
 include ':java'
+include ':kotlin'

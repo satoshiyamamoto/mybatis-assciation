@@ -2,13 +2,13 @@ package com.example.kotlin.model
 
 import java.time.LocalDateTime
 
-open class Group(
+open class Member(
         var id: Long,
         var name: String,
-        var members: MutableList<Member>,
+        var group: Group?,
         var createdAt: LocalDateTime
 ) {
 
     constructor() :
-            this(0, "", mutableListOf(), LocalDateTime.now())
+            this(0, "", null, LocalDateTime.now())
 }

@@ -36,8 +36,8 @@ public class GroupMapperRepositoryTest {
         Group group = repository.findById(1L);
         assertThat(group).isNotNull();
         assertThat(group.getId()).isEqualTo(1L);
-        log.info("=== {} ===", "lazy loading...");
         assertThat(group.getName()).isEqualTo("BAND-MAID");
+        log.info("=== {} ===", "lazy loading...");
         assertThat(group.getMembers()).hasSize(5);
         assertThat(group.getCreatedAt()).isBeforeOrEqualTo(LocalDateTime.now());
     }

@@ -1,6 +1,7 @@
 package com.example.java;
 
 import com.example.java.model.Group;
+import com.example.java.model.Member;
 import com.example.java.repository.GroupRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

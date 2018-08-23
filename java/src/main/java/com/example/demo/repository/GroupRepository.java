@@ -13,18 +13,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
-@Repository
 public interface GroupRepository {
 
-    @Select("SELECT * FROM groups")
     List<Group> findAll();
 
-    @Results({
-            @Result(id = true, property = "id", column = "id"),
-            @Result(property = "members", column = "id", javaType = List.class, many = @Many(fetchType = FetchType.LAZY, select = "com.example.demo.repository.MemberRepository.findByGroupId"))
-    })
-    @Select("SELECT * FROM groups WHERE id = #{id}")
     Group findById(@Param("id") Long id);
 
 }

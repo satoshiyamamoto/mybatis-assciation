@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.infrastructure.GroupMapperRepository;
 import com.example.demo.model.Group;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -15,10 +16,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
-public class GroupRepositoryTest {
+public class GroupMapperRepositoryTest {
 
     @Autowired
-    private GroupRepository repository;
+    private GroupMapperRepository repository;
 
     @Test
     public void should_load_repository() {

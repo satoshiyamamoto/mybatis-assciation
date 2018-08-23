@@ -2,7 +2,6 @@ package com.example.demo;
 
 import com.example.demo.model.Group;
 import com.example.demo.repository.GroupRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +14,11 @@ import java.util.List;
 @SpringBootApplication
 public class JavaApplication {
 
-    @Autowired
-    private GroupRepository repository;
+    private final GroupRepository repository;
+
+    public JavaApplication(GroupRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping("/")
     public List<Group> getGroups() {

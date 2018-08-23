@@ -9,6 +9,6 @@ mybatis:
   type-aliases-package: com.example.demo.model
   configuration:
     map-underscore-to-camel-case: true
-logging.level.com.example.demo.repository:
-  GroupRepository: DEBUG
-  MemberRepository: DEBUG
+logging.level.com.example.demo.infrastructure:
+  GroupMapperRepository: DEBUG
+  MemberMapperRepository: DEBUG

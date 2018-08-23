@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.infrastructure.MemberMapperRepository;
 import com.example.demo.model.Member;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,10 +14,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MemberRepositoryTest {
+public class MemberMapperRepositoryTest {
 
     @Autowired
-    private MemberRepository repository;
+    private MemberMapperRepository repository;
 
     @Test
     public void should_load_repository() {

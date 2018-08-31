@@ -1,2 +1,2 @@
-MyBatis Assosiation Sandbox
+MyBatis Assosiation
 ====

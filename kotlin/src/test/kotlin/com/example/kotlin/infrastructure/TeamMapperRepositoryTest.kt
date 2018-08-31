@@ -1,6 +1,5 @@
 package com.example.kotlin.infrastructure
 
-import com.example.kotlin.infrastructure.GroupMapperRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -11,10 +10,10 @@ import java.time.LocalDateTime
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class GroupMapperRepositoryTest {
+class TeamMapperRepositoryTest {
 
     @Autowired
-    lateinit var repository: GroupMapperRepository
+    lateinit var repository: TeamMapperRepository
 
     @Test
     fun should_load_repository() {
@@ -32,7 +31,6 @@ class GroupMapperRepositoryTest {
         assertThat(group).isNotNull
         assertThat(group.id).isEqualTo(1L)
         assertThat(group.name).isEqualTo("BAND-MAID")
-        println("*************")
         assertThat(group.members).hasSize(5)
         assertThat(group.createdAt).isBeforeOrEqualTo(LocalDateTime.now())
     }

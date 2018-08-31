@@ -10,9 +10,10 @@ import java.time.LocalDateTime
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class MemberMapperRepositoryTest(
-    @Autowired val repository: MemberMapperRepository
-) {
+class MemberMapperRepositoryTest {
+
+    @Autowired
+    lateinit var repository: MemberMapperRepository
 
     @Test
     fun should_load_repository() {
@@ -35,8 +36,8 @@ class MemberMapperRepositoryTest(
         assertThat(member).isNotNull
         assertThat(member.id).isEqualTo(1L)
         assertThat(member.name).isEqualTo("Saiki")
-        assertThat(member.group).isNotNull
-        assertThat(member.group!!.name).isEqualTo("BAND-MAID")
+        assertThat(member.team).isNotNull
+        assertThat(member.team?.name).isEqualTo("BAND-MAID")
         assertThat(member.createdAt).isBeforeOrEqualTo(LocalDateTime.now())
     }
 }

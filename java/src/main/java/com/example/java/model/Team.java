@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties({"handler"})
-public class Group {
+public class Team {
 
     private Long id;
 

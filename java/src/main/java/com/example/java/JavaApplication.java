@@ -1,8 +1,7 @@
 package com.example.java;
 
-import com.example.java.model.Group;
-import com.example.java.model.Member;
-import com.example.java.repository.GroupRepository;
+import com.example.java.model.Team;
+import com.example.java.repository.TeamRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,23 +14,23 @@ import java.util.List;
 @SpringBootApplication
 public class JavaApplication {
 
-    private final GroupRepository repository;
+    private final TeamRepository repository;
 
-    public JavaApplication(GroupRepository repository) {
+    public JavaApplication(TeamRepository repository) {
         this.repository = repository;
     }
 
     @GetMapping("/")
-    public List<Group> getGroups() {
+    public List<Team> getGroups() {
         return repository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Group getGroup(@PathVariable Long id) {
-        Group group = repository.findById(id);
+    public Team getGroup(@PathVariable Long id) {
+        Team team = repository.findById(id);
         System.out.println("!!!!!");
-        group.getMembers();
-        return group;
+        team.getMembers();
+        return team;
     }
 
     public static void main(String[] args) {

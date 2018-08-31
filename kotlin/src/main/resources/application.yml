@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://0.0.0.0/test?useSSL=false
+    url: jdbc:mysql://localhost/test?useSSL=false
     username: root
     password: ''
   flyway:
@@ -8,8 +8,6 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
-    lazy-loading-enabled: true
-    aggressive-lazy-loading: false
 logging.level.com.example.kotlin.infrastructure:
-  GroupMapperRepository: DEBUG
+  TeamMapperRepository: DEBUG
   MemberMapperRepository: DEBUG

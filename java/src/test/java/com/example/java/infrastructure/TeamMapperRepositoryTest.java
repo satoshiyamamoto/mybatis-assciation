@@ -1,10 +1,9 @@
 package com.example.java.infrastructure;
 
-import com.example.java.infrastructure.GroupMapperRepository;
-import com.example.java.model.Group;
-import lombok.extern.slf4j.Slf4j;
+import com.example.java.model.Team;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -15,11 +14,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Slf4j
-public class GroupMapperRepositoryTest {
+public class TeamMapperRepositoryTest {
 
     @Autowired
-    private GroupMapperRepository repository;
+    private TeamMapperRepository repository;
 
     @Test
     public void should_load_repository() {
@@ -33,12 +31,11 @@ public class GroupMapperRepositoryTest {
 
     @Test
     public void should_returns_a_group() {
-        Group group = repository.findById(1L);
-        assertThat(group).isNotNull();
-        assertThat(group.getId()).isEqualTo(1L);
-        assertThat(group.getName()).isEqualTo("BAND-MAID");
-        log.info("=== {} ===", "lazy loading...");
-        assertThat(group.getMembers()).hasSize(5);
-        assertThat(group.getCreatedAt()).isBeforeOrEqualTo(LocalDateTime.now());
+        Team team = repository.findById(1L);
+        assertThat(team).isNotNull();
+        assertThat(team.getId()).isEqualTo(1L);
+        assertThat(team.getName()).isEqualTo("BAND-MAID");
+        assertThat(team.getMembers()).hasSize(5);
+        assertThat(team.getCreatedAt()).isBeforeOrEqualTo(LocalDateTime.now());
     }
 }

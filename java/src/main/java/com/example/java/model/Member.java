@@ -15,7 +15,7 @@ public class Member {
 
     private String name;
 
-    private Group group;
+    private Team team;
 
     private LocalDateTime createdAt;
 

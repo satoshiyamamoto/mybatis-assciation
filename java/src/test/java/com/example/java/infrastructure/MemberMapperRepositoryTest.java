@@ -1,6 +1,5 @@
 package com.example.java.infrastructure;
 
-import com.example.java.infrastructure.MemberMapperRepository;
 import com.example.java.model.Member;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,8 +39,8 @@ public class MemberMapperRepositoryTest {
         assertThat(member).isNotNull();
         assertThat(member.getId()).isEqualTo(1L);
         assertThat(member.getName()).isEqualTo("Saiki");
-        assertThat(member.getGroup()).isNotNull();
-        assertThat(member.getGroup().getName()).isEqualTo("BAND-MAID");
+        assertThat(member.getTeam()).isNotNull();
+        assertThat(member.getTeam().getName()).isEqualTo("BAND-MAID");
         assertThat(member.getCreatedAt()).isBeforeOrEqualTo(LocalDateTime.now());
     }
 }

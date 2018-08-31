@@ -1,7 +1,7 @@
 package com.example.java.infrastructure;
 
-import com.example.java.model.Group;
-import com.example.java.repository.GroupRepository;
+import com.example.java.model.Team;
+import com.example.java.repository.TeamRepository;
 import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -15,16 +15,16 @@ import java.util.List;
 
 @Mapper
 @Repository
-public interface GroupMapperRepository extends GroupRepository {
+public interface TeamMapperRepository extends TeamRepository {
 
-    @Select("SELECT * FROM groups")
-    List<Group> findAll();
+    @Select("SELECT * FROM teams")
+    List<Team> findAll();
 
     @Results({
             @Result(id = true, property = "id", column = "id"),
             @Result(property = "members", column = "id", javaType = List.class, many = @Many(fetchType = FetchType.LAZY, select = "com.example.java.infrastructure.MemberMapperRepository.findByGroupId"))
     })
-    @Select("SELECT * FROM groups WHERE id = #{id}")
-    Group findById(@Param("id") Long id);
+    @Select("SELECT * FROM teams WHERE id = #{id}")
+    Team findById(@Param("id") Long id);
 
 }
